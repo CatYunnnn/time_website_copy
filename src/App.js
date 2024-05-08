@@ -1,8 +1,12 @@
 import "./App.css";
-import Main from "./components/main";
+import Headline from "./components/headline"
+import Nav from "./components/navbar";
 function App() {
   return (
-    <Main />
+    <>
+      <Nav />
+      <Headline />
+    </>
   );
 }
 

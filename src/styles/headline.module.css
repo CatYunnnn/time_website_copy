@@ -1,0 +1,120 @@
+.main {
+  position: relative;
+  padding-top: 35px;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 110px;
+}
+/*最大的圖片和文字*/
+.bigPhotos {
+  z-index: 1;
+  position: relative;
+  display: flex;
+}
+.wrap {
+  background-color: black;
+  color: white;
+  width: 315px;
+  height: 400px;
+}
+.bigPhotoTitle {
+  padding: 18px;
+  padding-bottom: 10px;
+  font-size: 34px;
+}
+.bigPhotoContentTime {
+  padding-left: 18px;
+  color: rgb(233, 6, 6);
+}
+.bigPhotoContent {
+  padding-right: 18px;
+  padding-top: 10px;
+  padding-left: 18px;
+  font-size: 18px;
+}
+.bigPhoto {
+  width: 600px;
+  height: 400px;
+}
+.sign {
+  background-color: rgb(48,48,48);
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right:0;
+  bottom:0;
+  font-size: 12px;
+  width:116px;
+  height:28px;
+  position: absolute;
+}
+/*三個小圖和文字*/
+.smallPhotos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  width: 915px;
+  height: 408px;
+}
+.smallPhotoGroup {
+  margin-right: 33px;
+  width: 283px;
+}
+.smallPhoto {
+  width: 283px;
+}
+.smallPhotoGroup:last-child {
+  margin: 0;
+}
+.smallPhotoContent {
+  margin-top: 45px;
+  text-wrap: wrap;
+}
+.smallPhotoContent:hover{
+  color:rgb(233, 6, 6);
+}
+.time {
+  margin-top: 20px;
+}
+/*右邊文字*/
+.textArea {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  height: auto;
+}
+.articleTitle {
+  font-size: 24px;
+  line-height: 25px;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+article {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+article h4 {
+  margin-left: 55px;
+  margin-right: 15px;
+  font-size: 24px;
+  height: 35px;
+  border-bottom: 2px solid rgb(233, 6, 6);
+}
+.articleContent:hover{
+  color:rgb(233, 6, 6);
+}
+.type {
+  color: rgb(233, 6, 6);
+}
+@media screen and (max-width: 1024px) {
+  .main{
+    padding-top: 55px;
+  }
+}
