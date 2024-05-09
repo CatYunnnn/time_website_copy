@@ -1,0 +1,45 @@
+.main {
+  width: 100%;
+  height: 576px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 78px;
+}
+.h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.cardGroups {
+  display: flex;
+}
+.card {
+  margin-top: 48px;
+  margin-right: 8px;
+  padding-top: 270px;
+  padding-left: 15px;
+  padding-right: 95px;
+  height: 420px;
+  width: 280px;
+  /* background-image: url("../icon/youshoudknow1.webp");
+  background-size: cover; */
+}
+.h3 {
+  font-size: 12px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 24px;
+  color: white;
+  background-color: rgb(185, 35, 24);
+}
+.content {
+  color: white;
+  margin-bottom: 18px;
+}
+.footer {
+  color: white;
+}

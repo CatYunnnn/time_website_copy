@@ -4,7 +4,7 @@ const Headline = () => {
   return (
     <main className={styles.main}>
       {/*新聞圖片*/}
-      <div className="photoGroup">
+      <div>
         {/*主圖*/}
         <div className={styles.bigPhotos}>
           <div className={styles.wrap}>
