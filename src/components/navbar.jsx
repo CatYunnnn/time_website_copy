@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/navbar.module.css";
-const Nav = () => {
+const Navbar = () => {
   ////側邊欄狀態
   const [sideBarStatus, setSideBarStatus] = useState("init");
 
@@ -37,11 +37,15 @@ const Nav = () => {
   return (
     <div>
       {/*sideBar*/}
-      <div className={ sideBarStatus === "init"
-              ? styles.sideBarNone
-              : sideBarStatus
-              ? styles.sideBar
-              : styles.sideBarNone}>
+      <div
+        className={
+          sideBarStatus === "init"
+            ? styles.sideBarNone
+            : sideBarStatus
+            ? styles.sideBar
+            : styles.sideBarNone
+        }
+      >
         <div
           className={
             sideBarStatus === "init"
@@ -107,13 +111,15 @@ const Nav = () => {
             <h3>CONNECT WITH US</h3>
           </div>
         </div>
-        <div className={
+        <div
+          className={
             sideBarStatus === "init"
               ? styles.rightSideLight
               : sideBarStatus
               ? styles.rightSideDark
               : styles.leftSideLight
-          }></div>
+          }
+        ></div>
       </div>
       {/*top layer*/}
       <div className={styles.top}>
@@ -197,4 +203,4 @@ const Nav = () => {
     </div>
   );
 };
-export default Nav;
+export default Navbar;

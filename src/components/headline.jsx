@@ -67,7 +67,7 @@ const Headline = () => {
       {/*右邊文字*/}
       <div className={styles.textArea}>
         <h3 className={styles.articleTitle}>MOST READ</h3>
-        <article>
+        <article className={styles.article}>
           <h4>1 </h4>
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
@@ -79,7 +79,7 @@ const Headline = () => {
             </p>
           </div>
         </article>
-        <article>
+        <article className={styles.article}>
           <h4>2 </h4>
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
@@ -91,7 +91,7 @@ const Headline = () => {
             </p>
           </div>
         </article>
-        <article>
+        <article className={styles.article}>
           <h4>3 </h4>
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
@@ -101,7 +101,7 @@ const Headline = () => {
             </p>
           </div>
         </article>
-        <article>
+        <article className={styles.article}>
           <h4>4 </h4>
           <div>
             <p className={styles.type}>POLITICS</p>

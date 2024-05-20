@@ -1,13 +1,15 @@
 import "./App.css";
-import Headline from "./components/headline";
-import Nav from "./components/navbar";
-import Youshouldknow from "./components/youshouldknow";
+import Headline from "./components/Headline";
+import Navbar from "./components/Navbar";
+import YouShouldKnow from "./components/YouShouldKnow";
+import EditorPicks from "./components/EditorPicks";
 function App() {
   return (
     <>
-      <Nav />
+      <Navbar />
       <Headline />
-      <Youshouldknow />
+      <YouShouldKnow />
+      <EditorPicks />
     </>
   );
 }
