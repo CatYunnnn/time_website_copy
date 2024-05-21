@@ -8,7 +8,7 @@
   color: rgb(233, 6, 6);
   z-index: 2;
   position: fixed;
-  top:0;
+  top: 0;
   display: flex;
   width: 100%;
   height: 55px;
@@ -63,7 +63,7 @@
 .bottom {
   width: 100%;
   height: 55px;
-  top:55px;
+  top: 55px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -224,7 +224,7 @@
   width: 100%;
   height: calc(100% - 110px);
 }
-.sideBarNone{
+.sideBarNone {
   display: none;
 }
 .leftSideBarInit {
@@ -342,8 +342,8 @@
   .bottom .titleHide {
     display: none !important;
   }
-  .bottom{
-    top:0px;
+  .bottom {
+    top: 0px;
   }
   .top {
     display: none;

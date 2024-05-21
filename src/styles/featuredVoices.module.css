@@ -1,0 +1,129 @@
+/*top part*/
+.wrap {
+  padding-top: 60px;
+  width: 100%;
+  height: 940px;
+  display: flex;
+}
+/*left side*/
+.mainTopics {
+  margin-left: auto;
+  margin-right: 48px;
+  width: 920px;
+}
+.mainTopics::before {
+  display: block;
+  content: "";
+  width: 920px;
+  height: 1px;
+  background-color: black;
+  margin-bottom: 30px;
+}
+.mainTopics h2 {
+  font-size: 34px;
+  line-height: 32px;
+  margin-bottom: 50px;
+}
+.cards {
+  margin-right: 48px;
+  width: 920px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 440px;
+  height: 170px;
+  margin-right: 20px;
+}
+.card h3 {
+  width: 80%;
+  font-size: 28px;
+  line-height: 26px;
+  font-weight: 400;
+  color: red;
+  margin-bottom: 15px;
+}
+.card p {
+  font-size: 28px;
+  line-height: 28px;
+}
+/*right side*/
+.latestStories {
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 36px;
+  width: 260px;
+  background-color: rgb(240, 241, 242);
+}
+.latestStoriesTopic {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 42px;
+  margin-bottom: 35px;
+}
+.storyTopic {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+.timeToRead {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.time {
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 26px;
+}
+/*bottom side*/
+.subscribe {
+  position: relative;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1440px;
+  height: 470px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 176px;
+  overflow: hidden;
+  background-color: rgb(245, 228, 221);
+  z-index: -2;
+}
+.subscribe::after {
+  z-index: -1;
+  left: -720px;
+  top: -100px;
+  width: 1400px;
+  height: 1400px;
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: rgb(246, 240, 236);
+  border-radius: 50%;
+}
+.subscribe h3 {
+  font-size: 20px;
+  width: 200px;
+  margin-bottom: 40px;
+}
+.subscribe span {
+  color: rgb(233, 6, 6);
+}
+.subscribe p {
+  font-size: 16px;
+  line-height: 14px;
+  margin-bottom: 18px;
+}
+.subscribe button {
+  width: 284px;
+  height: 40px;
+  background-color: rgb(233, 6, 6);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}

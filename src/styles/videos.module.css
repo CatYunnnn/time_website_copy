@@ -1,30 +1,99 @@
 .wrap {
   display: flex;
   width: 100%;
-  height: 872px;
-  background-color: linear-gradient(to right, rgb(19, 19, 19), rgb(20, 15, 36));
+  height: 800px;
+  background-image: linear-gradient(to right, rgb(19, 19, 19), rgb(20, 15, 36));
   padding-bottom: 70px;
+  color: rgb(235, 235, 235);
 }
 .main {
-  height: 640px;
-  width: 440px;
+  height: auto;
+  width: 782px;
   margin-left: auto;
 }
 .button {
+  display: block;
   color: white;
   font-size: 32px;
+  margin-top: 70px;
   margin-bottom: 34px;
+  background-color: transparent;
+  outline: none;
+  border: none;
 }
 .sampleVideo {
   width: 782px;
   height: 440px;
   margin-bottom: 40px;
 }
+.introduction {
+  display: flex;
+}
 .time {
+  width: 290px;
   margin-right: 115px;
 }
+.time h3 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+.context {
+  width: 370px;
+}
+/*watchnext part*/
 .watchNext {
   margin-left: 44px;
   margin-right: auto;
   width: 410px;
+  padding-top: 140px;
+}
+.watchNextTitle {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+.card {
+  display: flex;
+}
+.video {
+  position: relative;
+  width: 164px;
+  height: 93px;
+  margin-right: 15px;
+  margin-bottom: 44px;
+}
+.video:hover:not(.playingNow)::after {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  width: 60px;
+  height: 22px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  position: absolute;
+  content: "PLAY";
+  border: 1.5px solid red;
+  border-radius: 25px;
+}
+
+.playingNow {
+  position: relative;
+  border: 2px solid white;
+}
+.playingNow::after {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  content: "now playing";
+}
+.watchNextTitleAndTime {
+  width: 178px;
+  height: 80px;
 }
