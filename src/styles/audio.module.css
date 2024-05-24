@@ -1,0 +1,28 @@
+.audio {
+  width: 100%;
+  height: 260px;
+  margin-top: 90px;
+}
+.audio h2 {
+  font-size: 30px;
+  line-height: 26px;
+  text-align: center;
+}
+.audioBackground {
+  position: relative;
+  width: 600px;
+  height: 180px;
+  display: block;
+  margin: 42px auto 0 auto;
+  border-radius: 0;
+  background-color: rgb(241, 243, 244);
+}
+.audioBackground audio {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 60px;
+}
