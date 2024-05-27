@@ -55,7 +55,7 @@ export default function Videos() {
           <div className={styles.card}>
             <div
               className={`${styles.video} ${
-                playingNow === 1 ? styles.playingNow : ""
+                playingNow === 1 || playingNow === 0 ? styles.playingNow : ""
               }`}
               style={{
                 backgroundImage: `url(${pic1})`,

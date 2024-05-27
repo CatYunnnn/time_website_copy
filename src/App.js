@@ -7,6 +7,7 @@ import Videos from "./components/Videos";
 import FeaturedVoices from "./components/FeaturedVoices";
 import Audio from "./components/Audio";
 import More from "./components/More";
+import Others from "./components/Others";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
       <FeaturedVoices />
       <Audio />
       <More />
+      <Others />
     </>
   );
 }

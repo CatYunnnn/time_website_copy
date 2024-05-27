@@ -161,8 +161,8 @@
 .politics {
   position: relative;
   width: 1230px;
-  height: 680px;
-  margin: 95px auto 0 auto;
+  height: 700px;
+  margin: 95px auto 150px auto;
   padding-top: 30px;
 }
 .politics::before {

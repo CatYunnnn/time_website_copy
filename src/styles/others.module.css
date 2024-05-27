@@ -1,0 +1,56 @@
+.others {
+  width: 1230px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+.title {
+  position: relative;
+  margin-top: 80px;
+
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  width: 1230px;
+  height: 1px;
+  top: 0;
+  background-color: black;
+}
+.title h3 {
+  margin-left: 4px;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+.title p {
+  font-size: 18px;
+  color: rgb(233, 6, 6);
+  text-decoration: underline;
+  margin-right: 4px;
+}
+.wrap {
+  justify-content: space-between;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.card {
+  margin-right: 8px;
+}
+.card img {
+  width: 285px;
+  height: 190px;
+  margin-bottom: 30px;
+}
+.card h4 {
+  width: 285px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.card h4:hover {
+  cursor: pointer;
+  color: rgb(233, 6, 6);
+}
