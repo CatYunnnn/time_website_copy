@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/more.module.css";
+import paperPlane from "../icon/paperPlane.png";
+import icon from "../icon/redPaperPlane.png";
 export default function More() {
   const images = [];
   for (let i = 1; i <= 15; i++) {
@@ -43,7 +45,9 @@ export default function More() {
       </div>
       {/*sign up*/}
       <div className={styles.signUp}>
-        <div className={styles.icon}>飛機圖案</div>
+        <div className={styles.icon}>
+          <img src={paperPlane} alt="paper airplane icon" />
+        </div>
         <div className={styles.grayBackground}>
           <p>
             <span>Get The Brief newsletter.</span> Sign up to receive the top
@@ -55,8 +59,11 @@ export default function More() {
       {/*climate*/}
       <div className={styles.climate}>
         <div className={styles.titleAndSubscribe}>
-          <h3>CLIMATE</h3>
-          <p>Subscribe to the Climate newsletter</p>
+          <h3>CLIMATE &gt;</h3>
+          <p>
+            <img src={icon} alt="red newsletter paper plane" />
+            Subscribe to the Climate newsletter
+          </p>
         </div>
         <div className={styles.wrap}>
           <div className={styles.climateLeftSide}>
@@ -65,6 +72,7 @@ export default function More() {
               style={{
                 backgroundImage: `url(${images[5]})`,
                 backgroundSize: "cover",
+                cursor: "pointer",
               }}
             ></div>
             <h3>The Impact of Inhaling Wildfire Smoke</h3>
@@ -81,6 +89,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[6]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>Storms Kill a Pregnant Woman</p>
@@ -91,6 +100,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[7]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>Canadian Wildfire Smoke Chokes Midwest</p>
@@ -101,6 +111,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[8]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>
@@ -113,6 +124,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[9]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>EU Climate Chief Says the EU Can Work Better With Companies</p>
@@ -124,7 +136,10 @@ export default function More() {
       <div className={styles.politics}>
         <div className={styles.titleAndSubscribe}>
           <h3>POLITICS</h3>
-          <p>Subscribe to the Politics newsletter</p>
+          <p>
+            <img src={icon} alt="red newsletter paper plane" />
+            Subscribe to the Politics newsletter
+          </p>
         </div>
         <div className={styles.wrap}>
           <div className={styles.politicsLeftSide}>
@@ -133,6 +148,7 @@ export default function More() {
               style={{
                 backgroundImage: `url(${images[10]})`,
                 backgroundSize: "cover",
+                cursor: "pointer",
               }}
             ></div>
             <h3>What Judge Merchan Knows About Trump</h3>
@@ -148,6 +164,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[11]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>Why Democrats Are Excited About Florida</p>
@@ -158,6 +175,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[12]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>Why Democrats Are Excited About Florida</p>
@@ -168,6 +186,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[13]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>How Trump's Trials Could Define 2024</p>
@@ -178,6 +197,7 @@ export default function More() {
                 style={{
                   backgroundImage: `url(${images[14]})`,
                   backgroundSize: "cover",
+                  cursor: "pointer",
                 }}
               ></div>
               <p>How Is Trump's New Firm Worth Billions?</p>

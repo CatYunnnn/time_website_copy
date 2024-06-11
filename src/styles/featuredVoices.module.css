@@ -20,9 +20,12 @@
   margin-bottom: 30px;
 }
 .mainTopics h2 {
-  font-size: 34px;
-  line-height: 32px;
-  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 40px;
+  font-weight: 400;
 }
 .cards {
   margin-right: 48px;
@@ -38,14 +41,23 @@
 .card h3 {
   width: 80%;
   font-size: 28px;
-  line-height: 26px;
+  line-height: 28px;
+  letter-spacing: 1.4px;
+  font-family: "Zilla Slab", sans-serif;
   font-weight: 400;
-  color: red;
+  color: rgb(233, 6, 6);
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .card p {
-  font-size: 28px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 1.2px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+.card p:hover {
+  color: rgb(233, 6, 6);
 }
 /*right side*/
 .latestStories {
@@ -57,26 +69,40 @@
 }
 .latestStoriesTopic {
   font-size: 24px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-family: "Roboto Condensed", sans-serif;
   text-align: center;
   margin-top: 42px;
   margin-bottom: 35px;
 }
 .storyTopic {
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 300;
-  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 23.9px;
+  letter-spacing: 0;
+  font-family: "Zilla Slab", sans-serif;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.storyTopic:hover {
+  color: rgb(233, 6, 6);
+  cursor: pointer;
 }
 .timeToRead {
   font-size: 14px;
-  line-height: 14px;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 .time {
   font-size: 14px;
-  line-height: 14px;
+  line-height: 11.7px;
+  letter-spacing: 0.5px;
+  font-family: "Roboto Condensed", sans-serif;
   margin-bottom: 26px;
+  font-weight: 300;
 }
 /*bottom side*/
 .subscribe {
@@ -106,19 +132,31 @@
   border-radius: 50%;
 }
 .subscribe h3 {
-  font-size: 20px;
-  width: 200px;
+  font-size: 24px;
+  line-height: 31.2px;
+  letter-spacing: 0;
+  font-family: "Zilla Slab", sans-serif;
+  width: 250px;
   margin-bottom: 40px;
 }
 .subscribe span {
   color: rgb(233, 6, 6);
 }
+.subscribe span:hover {
+  cursor: pointer;
+}
 .subscribe p {
-  font-size: 16px;
-  line-height: 14px;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 18px;
 }
 .subscribe button {
+  font-size: 12px;
+  line-height: 10px;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
   width: 284px;
   height: 40px;
   background-color: rgb(233, 6, 6);
@@ -126,4 +164,6 @@
   outline: none;
   border: none;
   border-radius: 4px;
+  font-weight: 300;
+  cursor: pointer;
 }

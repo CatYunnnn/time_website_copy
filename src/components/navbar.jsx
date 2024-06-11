@@ -1,205 +1,214 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/navbar.module.css";
+import icon from "../icon/blackPaperPlane.png";
+import menuBar from "../icon/menubar.png";
+import searchIcon from "../icon/searchIcon.png";
+import crossIcon from "../icon/crossIcon.png";
 const Navbar = () => {
-  ////側邊欄狀態
-  const [sideBarStatus, setSideBarStatus] = useState("init");
+  /*側邊欄是否打開*/
+  const [sidebarState, setSidebarState] = useState(false);
+  const [inputState, setInputState] = useState(false);
+  const openSidebar = () => {
+    setSidebarState(!sidebarState);
+  };
+  const changeInput = () => {
+    setInputState(!inputState);
+  };
+  const closeInput = () => {
+    setInputState(false);
+  };
+  /*監聽滑鼠滾輪來決定是否隱藏標題列*/
+  const [count, setCount] = useState(0);
+  const [showTitle, setShowTitle] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  ////叉叉狀態
-  const [crossIconStatus, setCrossIconStatus] = useState(false);
+  useEffect(() => {
+    if (sidebarState === false) {
+      /*關閉input*/
+      setInputState(false);
+      /*讓sidebar跳出時紀錄滾動位址*/
+      /*讓畫面恢復 取消固定*/
+      document.body.style.position = "static";
+      window.scrollTo(0, scrollPosition);
 
-  ////文字狀態
-  const [showText, setShowText] = useState(true);
+      /*當往下滾動 隱藏title欄位*/
+      const ifTitleShow = (e) => {
+        setCount((prevCount) => {
+          let newCount = prevCount + e.deltaY;
 
-  ////輸入框狀態
-  const [showInput, setShowInput] = useState("init");
+          if (newCount >= 200) {
+            newCount = 0;
+            setShowTitle(false);
+          } else if (newCount <= -200) {
+            newCount = 0;
+            setShowTitle(true);
+          }
 
-  ////側邊欄的開關
-  const switchSideBar = () => {
-    if (sideBarStatus === "init" || sideBarStatus === false) {
-      setCrossIconStatus(true);
-      setShowInput(true);
-      setShowText(false);
-      setSideBarStatus(true);
+          return newCount;
+        });
+      };
+      window.addEventListener("wheel", ifTitleShow);
+      return () => {
+        window.removeEventListener("wheel", ifTitleShow);
+      };
     } else {
-      setCrossIconStatus(false);
-      setShowInput(false);
-      setShowText(true);
-      setSideBarStatus(false);
+      /*開啟input*/
+      setInputState(true);
+      /*讓sidebar跳出時紀錄滾動位址*/
+      /*在sidebar彈出時固定畫面 並保留scroll bar*/
+      let temp = window.scrollY;
+      setScrollPosition(window.scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.overflowY = "scroll";
+      document.body.style.left = "0";
+      document.body.style.top = `-${temp}px`;
+      document.body.style.width = "100%";
     }
-  };
 
-  ////叉叉和文字和輸入框開關
-  const textCrossSwitch = () => {
-    setCrossIconStatus(!crossIconStatus);
-    setShowInput(!crossIconStatus);
-    setShowText(crossIconStatus);
-  };
+    /*如果sidebarState 改變會重新偵測一次並remove舊的addeventlistener*/
+  }, [sidebarState]);
+
   return (
-    <div>
-      {/*sideBar*/}
+    <div className={styles.navbar}>
+      {/*navbar*/}
+      <div className={styles.topWrap}>
+        <div className={`${showTitle ? styles.title : styles.titleHide}`}>
+          <p>Sign Up for Our Newsletter &gt;&gt;</p>
+          <h2>TIME</h2>
+          <div>
+            <button>SUBSCRIBE</button>
+          </div>
+        </div>
+        {/*sidebarHead*/}
+        <div
+          className={`${
+            showTitle ? styles.sidebarHead : styles.sidebarHeadMove
+          }`}
+        >
+          <p onClick={openSidebar}>
+            <img src={menuBar} alt="menu bar icon" />
+          </p>
+          <p
+            className={`${
+              sidebarState ? styles.sidebarHeadPHide : styles.sidebarHeadP
+            }`}
+          >
+            <img src={icon} alt="black newsletter paper plane" />
+            SIGN UP FOR OUR ENTERTAINMENT NEWSLETTER
+          </p>
+          <p>
+            <img
+              onClick={changeInput}
+              className={`${
+                inputState ? styles.searchIconMove : styles.searchIcon
+              }`}
+              src={searchIcon}
+              alt="search icon"
+            />
+            <input
+              className={`${
+                inputState ? styles.sidebarInputMove : styles.sidebarInput
+              }`}
+              placeholder="Search..."
+              type="text"
+            />
+            <img
+              onClick={closeInput}
+              className={`${
+                inputState ? styles.crossIconShow : styles.crossIconHide
+              }`}
+              src={crossIcon}
+              alt="cross icon"
+            />
+          </p>
+        </div>
+      </div>
+
       <div
-        className={
-          sideBarStatus === "init"
-            ? styles.sideBarNone
-            : sideBarStatus
-            ? styles.sideBar
-            : styles.sideBarNone
-        }
+        className={`${
+          sidebarState === true ? styles.sidebar : styles.sidebarClose
+        } ${showTitle === true ? "" : styles.sidebarLong}`}
       >
-        <div
-          className={
-            sideBarStatus === "init"
-              ? styles.leftSideBarInit
-              : sideBarStatus
-              ? styles.leftSideBarOpen
-              : styles.leftSideBarClose
-          }
-        >
-          <div className={styles.buttons}>
-            <button className={styles.sideBarSignIn}>SIGN IN</button>
-            <button className={styles.sideBarSubscribe}>SUBSCRIBE</button>
-          </div>
-          <div className={styles.sections}>
-            <h3>SECTIONS</h3>
-            <div className={styles.items}>Home</div>
-            <div className={styles.items}>U.S.</div>
-            <div className={styles.items}>Politics</div>
-            <div className={styles.items}>World</div>
-            <div className={styles.items}>Health</div>
-            <div className={styles.items}>Climate</div>
-            <div className={styles.items}>Future of Work by Charter</div>
-            <div className={styles.items}>Business</div>
-            <div className={styles.items}>Tech</div>
-            <div className={styles.items}>Entertainment</div>
-            <div className={styles.items}>Ideas</div>
-            <div className={styles.items}>Science</div>
-            <div className={styles.items}>History</div>
-            <div className={styles.items}>Sports</div>
-            <div className={styles.items}>Magazine</div>
-            <div className={styles.items}>TIME 2030</div>
-            <div className={styles.items}>Next Generation Leaders</div>
-            <div className={styles.items}>TIME100 Leadership Series</div>
-            <div className={styles.items}>TIME Studios</div>
-            <div className={styles.items}>Video</div>
-            <div className={styles.items}>TIME100 Talks</div>
-            <div className={styles.items}>TIMEPieces</div>
-            <div className={styles.items}>The TIME Vault</div>
-            <div className={styles.items}>TIME for Health</div>
-            <div className={styles.items}>TIME for kids</div>
-            <div className={styles.items}>TIME Edge</div>
-            <div className={styles.items}>TIME CO2</div>
-            <div className={styles.items}>
-              Red Border: Branded Content by TIME
-            </div>
-            <div className={styles.items}>Coupons</div>
-            <div className={styles.items}>Personal Finance by TIME Stamped</div>
-            <div className={styles.items}>Shopping by TIME Stamped</div>
-          </div>
-          <div className={styles.sections}>
-            <h3>JOIN US</h3>
-          </div>
-          <div className={styles.sections}>
-            <h3>CUSTOMER CARE</h3>
-          </div>
-          <div className={styles.sections}>
-            <h3>REACH OUT</h3>
-          </div>
-          <div className={styles.sections}>
-            <h3>MORE</h3>
-          </div>
-          <div className={styles.sections}>
-            <h3>CONNECT WITH US</h3>
-          </div>
+        <div className={styles.topicGroup}>
+          <h3>SECTIONS</h3>
+          <button>Home</button>
+          <button>U.S.</button>
+          <button>Politics</button>
+          <button>World</button>
+          <button>Health</button>
+          <button>Climate</button>
+          <button>Future of Work by Charter</button>
+          <button>Business</button>
+          <button>Tech</button>
+          <button>Entertainment</button>
+          <button>Ideas</button>
+          <button>Science</button>
+          <button>History</button>
+          <button>Sports</button>
+          <button>Magazine</button>
+          <button>TIME 2030</button>
+          <button>Next Generation Leaders</button>
+          <button>TIME100 Leadership Series</button>
+          <button>TIME Studios</button>
+          <button>Video</button>
+          <button>TIME100 Talks</button>
+          <button>TIMEPieces</button>
+          <button>The TIME Vault</button>
+          <button>TIME for Health</button>
+          <button>TIME for Kids</button>
+          <button>TIME Edge</button>
+          <button>TIME CO2</button>
+          <button>Red Border:Branded Content by TIME</button>
+          <button>Coupons</button>
+          <button>Personal Finance by TIME Stamped</button>
+          <button>Shopping by TIME Stamped</button>
         </div>
-        <div
-          className={
-            sideBarStatus === "init"
-              ? styles.rightSideLight
-              : sideBarStatus
-              ? styles.rightSideDark
-              : styles.leftSideLight
-          }
-        ></div>
-      </div>
-      {/*top layer*/}
-      <div className={styles.top}>
-        <p className={styles.topText}>
-          Sign Up for Our Newsletter {">"}
-          {">"}
-        </p>
-        <h2 className={styles.title}>TIME</h2>
-        <div className={styles.buttonGroup}>
-          <button className={styles.subscribe}>SUBSCRIBE</button>
-          <button className={styles.signIn}>SIGN IN</button>
+        <div className={styles.topicGroup}>
+          <h3>JOIN US</h3>
+          <button>Newsletters</button>
+          <button>Subscribe</button>
+          <button>Give a Gift</button>
+          <button>Shop the TIME Store</button>
+          <button>TIME Cover Store</button>
+        </div>
+        <div className={styles.topicGroup}>
+          <h3>CUSTOMER CARE</h3>
+          <button>US & Canada</button>
+          <button>Global Help Center</button>
+        </div>
+        <div className={styles.topicGroup}>
+          <h3>REACH OUT</h3>
+          <button>Careers</button>
+          <button>Press Room</button>
+          <button>Contact the Editors</button>
+          <button>Media Kit</button>
+          <button>Reprints and Permissions</button>
+        </div>
+        <div className={styles.topicGroup}>
+          <h3>MORE</h3>
+          <button>About Us</button>
+          <button>Privacy Policy</button>
+          <button>Your Privacy Rights</button>
+          <button>Terms of Use</button>
+          <button>Modern Slavery Statement</button>
+          <button>Site Map</button>
+        </div>
+        <div className={styles.connectWithUs}>
+          <h3>CONNECT WITH US</h3>
+          <div className={styles.wrap}>
+            <p>icon</p>
+            <p>icon</p>
+            <p>icon</p>
+            <p>icon</p>
+          </div>
         </div>
       </div>
-      {/*bottom layer*/}
-      <div className={styles.bottom}>
-        <div className={styles.menu}>
-          <img
-            onClick={switchSideBar}
-            src={
-              sideBarStatus === "init"
-                ? require("../icon/menu.png")
-                : sideBarStatus
-                ? require("../icon/close.png")
-                : require("../icon/menu.png")
-            }
-            alt="hamburger"
-          />
-        </div>
-        <h2
-          className={
-            sideBarStatus === "init"
-              ? styles.title
-              : sideBarStatus
-              ? `${styles.titleHide} ${styles.title}`
-              : styles.title
-          }
-        >
-          TIME
-        </h2>
-        <p className={showText ? styles.bottomTextShow : styles.bottomTextHide}>
-          SIGN UP FOR OUR IDEAS NEWSLETTER
-        </p>
-        <div
-          className={
-            showInput === "init"
-              ? styles.searchIconInit
-              : showInput
-              ? styles.searchIconOpen
-              : styles.searchIconClose
-          }
-        >
-          <img
-            onClick={textCrossSwitch}
-            src={require("../icon/magnifier.png")}
-            alt="magnifier"
-          />
-        </div>
-        <input
-          className={
-            showInput === "init"
-              ? styles.inputClose
-              : showInput
-              ? styles.inputOpen
-              : styles.inputClose
-          }
-          placeholder="Search..."
-          type="text"
-        />
-        <div
-          className={
-            crossIconStatus ? styles.crossIconOpen : styles.crossIconClose
-          }
-        >
-          <img
-            onClick={textCrossSwitch}
-            src={require("../icon/close.png")}
-            alt=""
-          />
-        </div>
-      </div>
+      <div
+        onClick={openSidebar}
+        className={`${
+          sidebarState === true ? styles.sidebarAfter : styles.sidebarAfterClose
+        } ${showTitle === true ? "" : styles.sidebarAfterLong}`}
+      ></div>
     </div>
   );
 };

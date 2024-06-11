@@ -20,13 +20,27 @@
   width: 1216px;
 }
 .title {
-  font-size: 30px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
 }
-
 .subscribe {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.9px;
+  font-family: "Roboto", sans-serif;
   color: rgb(233, 6, 6);
   text-decoration: underline;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.subscribe img {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
 }
 .cards {
   margin-top: 30px;
@@ -36,6 +50,13 @@
 .card {
   width: 285px;
   height: 190px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-right: 29px;
+}
+.context {
+  width: 285px;
+  font-size: 20px;
+  line-height: 23.6px;
+  letter-spacing: 0.3px;
+  font-family: "Zilla Slab", sans-serif;
 }

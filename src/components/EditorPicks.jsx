@@ -4,12 +4,14 @@ import pic1 from "../icon/editorpick1.webp";
 import pic2 from "../icon/editorpick2.webp";
 import pic3 from "../icon/editorpick3.webp";
 import pic4 from "../icon/editorpick4.webp";
+import icon from "../icon/redPaperPlane.png";
 export default function EditorPicks() {
   return (
     <div className={styles.editorPicks}>
       <div className={styles.wrap}>
         <div className={styles.title}>EDITOR'S PICKS</div>
         <div className={styles.subscribe}>
+          <img src={icon} alt="red newsletter paper plane" />
           Subscribe to the Inside Time newsletter
         </div>
       </div>
@@ -28,21 +30,25 @@ export default function EditorPicks() {
             className={styles.card}
             style={{ backgroundImage: `url(${pic2})`, backgroundSize: "cover" }}
           ></div>
-          <p>Women Say They Were Pressured Into Long-Term Birth Control</p>
+          <p className={styles.context}>
+            Women Say They Were Pressured Into Long-Term Birth Control
+          </p>
         </div>
         <div>
           <div
             className={styles.card}
             style={{ backgroundImage: `url(${pic3})`, backgroundSize: "cover" }}
           ></div>
-          <p>How Far Trump Would Go</p>
+          <p className={styles.context}>How Far Trump Would Go</p>
         </div>
         <div>
           <div
             className={styles.card}
             style={{ backgroundImage: `url(${pic4})`, backgroundSize: "cover" }}
           ></div>
-          <p>Brittney Griner:What I Endured in Russia</p>
+          <p className={styles.context}>
+            Brittney Griner:What I Endured in Russia
+          </p>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@
 .title {
   position: relative;
   margin-top: 80px;
-
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -23,13 +22,29 @@
 .title h3 {
   margin-left: 4px;
   margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
 }
 .title p {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.9px;
+  font-family: "Roboto", sans-serif;
   color: rgb(233, 6, 6);
   text-decoration: underline;
   margin-right: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+.title img {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
 }
 .wrap {
   justify-content: space-between;
@@ -47,8 +62,11 @@
 }
 .card h4 {
   width: 285px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.6px;
+  letter-spacing: 0.3px;
+  font-family: "Zilla Slab", sans-serif;
+  font-weight: 500;
 }
 .card h4:hover {
   cursor: pointer;

@@ -9,7 +9,11 @@
 }
 .h2 {
   text-align: center;
-  font-size: 30px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
 }
 .cardGroups {
   display: flex;
@@ -27,6 +31,9 @@
 }
 .h3 {
   font-size: 12px;
+  line-height: 10px;
+  letter-spacing: 0.8px;
+  font-family: "Roboto", sans-serif;
   display: block;
   display: flex;
   justify-content: center;
@@ -37,9 +44,19 @@
   background-color: rgb(185, 35, 24);
 }
 .content {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-family: "Zilla Slab", sans-serif;
   color: white;
+  font-weight: 600;
+  margin-top: 12px;
   margin-bottom: 18px;
 }
 .footer {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1px;
+  font-family: "Roboto", sans-serif;
   color: white;
 }

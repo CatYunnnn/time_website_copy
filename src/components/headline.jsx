@@ -11,6 +11,9 @@ const Headline = () => {
             <p className={styles.bigPhotoTitle}>
               Inside The Nuclear Fusion Facility That Changed the World
             </p>
+            <p className={styles.timeToRead} style={{ paddingLeft: "14px" }}>
+              21 MIN READ
+            </p>
             <p className={styles.bigPhotoContentTime}>
               JANUARY 8, 2024.10:59 AM EST
             </p>
@@ -37,6 +40,7 @@ const Headline = () => {
             <p className={styles.smallPhotoContent}>
               What Is COVID-19's Incubation Period?
             </p>
+            <p className={styles.timeToRead}>28 MIN READ</p>
             <p className={styles.time}>JANUARY 9, 2024.12:16 PM EST</p>
           </div>
           <div className={styles.smallPhotoGroup}>
@@ -49,6 +53,7 @@ const Headline = () => {
               Adan Canto Is Remembered By His 'Designated Survivor' CoStars and
               Peers
             </p>
+            <p className={styles.timeToRead}>5 MIN READ</p>
             <p className={styles.time}>JANUARY 10, 2024.8:15 AM EST</p>
           </div>
           <div className={styles.smallPhotoGroup}>
@@ -60,6 +65,7 @@ const Headline = () => {
             <p className={styles.smallPhotoContent}>
               Trump Distorts His Impeachment History
             </p>
+            <p className={styles.timeToRead}>13 MIN READ</p>
             <p className={styles.time}>JANUARY 9, 2024.6:28 PM EST</p>
           </div>
         </div>
@@ -77,6 +83,7 @@ const Headline = () => {
               One Joke in Particular Sank <br />
               Jo Koy
             </p>
+            <p className={styles.timeToRead}>3 MIN READ</p>
           </div>
         </article>
         <article className={styles.article}>
@@ -89,6 +96,7 @@ const Headline = () => {
               One Joke in Particular Sank <br />
               Jo Koy
             </p>
+            <p className={styles.timeToRead}>7 MIN READ</p>
           </div>
         </article>
         <article className={styles.article}>
@@ -99,6 +107,7 @@ const Headline = () => {
               Everything You Need to <br /> Know About the 2024 <br /> Golden
               Globes
             </p>
+            <p className={styles.timeToRead}>6 MIN READ</p>
           </div>
         </article>
         <article className={styles.article}>
@@ -111,6 +120,7 @@ const Headline = () => {
               One Joke in Particular Sank <br />
               Jo Koy
             </p>
+            <p className={styles.timeToRead}>4 MIN READ</p>
           </div>
         </article>
       </div>

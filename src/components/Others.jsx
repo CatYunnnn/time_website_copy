@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/others.module.css";
+import icon from "../icon/redPaperPlane.png";
 export default function Others() {
   const images = [];
   for (let i = 1; i <= 24; i++) {
@@ -10,7 +11,10 @@ export default function Others() {
       {/*health*/}
       <div className={styles.title}>
         <h3>HEALTH &gt;</h3>
-        <p>Subscribe to the Health Matters newsletter</p>
+        <p>
+          <img src={icon} alt="red newsletter paper plane" />
+          Subscribe to the Health Matters newsletter
+        </p>
       </div>
       <div className={styles.wrap}>
         <div className={styles.card}>
@@ -37,7 +41,10 @@ export default function Others() {
       {/*entertainment*/}
       <div className={styles.title}>
         <h3>ENTERTAINMENT &gt;</h3>
-        <p>Subscribe to the Health Matters newsletter</p>
+        <p>
+          <img src={icon} alt="red newsletter paper plane" />
+          Subscribe to the Health Matters newsletter
+        </p>
       </div>
       <div className={styles.wrap}>
         <div className={styles.card}>
@@ -66,7 +73,10 @@ export default function Others() {
       {/*personal finance*/}
       <div className={styles.title}>
         <h3>PERSONAL FINANCE &gt;</h3>
-        <p>Subscribe to the Health Matters newsletter</p>
+        <p>
+          <img src={icon} alt="red newsletter paper plane" />
+          Subscribe to the Health Matters newsletter
+        </p>
       </div>
       <div className={styles.wrap}>
         <div className={styles.card}>
@@ -93,7 +103,10 @@ export default function Others() {
       {/*future of work*/}
       <div className={styles.title}>
         <h3>FUTURE OF WORK &gt;</h3>
-        <p>Subscribe to the Health Matters newsletter</p>
+        <p>
+          <img src={icon} alt="red newsletter paper plane" />
+          Subscribe to the Health Matters newsletter
+        </p>
       </div>
       <div className={styles.wrap}>
         <div className={styles.card}>
@@ -119,7 +132,10 @@ export default function Others() {
       {/*shopping by timestamped*/}
       <div className={styles.title}>
         <h3>SHOPPING BY TIMESTAMPED &gt;</h3>
-        <p>Subscribe to the Health Matters newsletterv</p>
+        <p>
+          <img src={icon} alt="red newsletter paper plane" />
+          Subscribe to the Health Matters newsletterv
+        </p>
       </div>
       <div className={styles.wrap}>
         <div className={styles.card}>

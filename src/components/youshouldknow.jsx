@@ -8,7 +8,7 @@ import photo5 from "../icon/youshouldknow5.webp";
 export default function YouShouldKnow() {
   return (
     <main className={styles.main}>
-      <h2 className={styles.h2}>You Should Know</h2>
+      <h2 className={styles.h2}>YOU SHOULD KNOW</h2>
       <div className={styles.cardGroups}>
         <div
           className={styles.card}
@@ -30,7 +30,7 @@ export default function YouShouldKnow() {
             backgroundSize: "cover",
           }}
         >
-          <h3 className={styles.h3}>COCO GRAUFF</h3>
+          <h3 className={styles.h3}>GOLF</h3>
           <div className={styles.content}>
             Coco Gauff Is Playing for Herself Now
           </div>

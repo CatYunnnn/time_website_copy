@@ -8,6 +8,7 @@ import FeaturedVoices from "./components/FeaturedVoices";
 import Audio from "./components/Audio";
 import More from "./components/More";
 import Others from "./components/Others";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
       <Audio />
       <More />
       <Others />
+      <Footer />
     </>
   );
 }

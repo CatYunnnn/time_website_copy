@@ -1,0 +1,100 @@
+.footer {
+  width: 100%;
+  margin-top: 90px;
+}
+.footer h2 {
+  color: rgb(233, 6, 6);
+  font-size: 36px;
+  line-height: 26.7px;
+  letter-spacing: 0;
+  font-family: "Zilla Slab", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.wrap {
+  display: flex;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: none;
+}
+.columnsWrap {
+  display: flex;
+  height: 100%;
+}
+.columnsWrap > :first-child,
+.wrap > :first-child {
+  margin-left: auto;
+}
+.columnsWrap > :last-child,
+.wrap > :last-child {
+  margin-right: auto;
+}
+.nav {
+  position: relative;
+  width: 100%;
+  height: 372px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.nav::before {
+  position: absolute;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgb(215, 215, 217);
+}
+.nav::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgb(215, 215, 217);
+}
+.columns {
+  width: 270px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.columns p {
+  color: rgb(104, 108, 115);
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+/*footer*/
+.footer footer {
+  width: 100%;
+  height: 70px;
+}
+.terms {
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 10px;
+  width: 965px;
+  font-family: "PT Serif", sans-serif;
+  margin: auto;
+}
+.terms span {
+  color: rgb(120, 23, 15);
+}
+.notice {
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  line-height: 20px;
+  font-size: 10px;
+  width: 686px;
+  font-family: "PT Serif", sans-serif;
+  margin: 0 auto auto auto;
+}

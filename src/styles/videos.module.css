@@ -14,7 +14,10 @@
 .button {
   display: block;
   color: white;
-  font-size: 32px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-family: "Oswald", sans-serif;
   margin-top: 70px;
   margin-bottom: 34px;
   background-color: transparent;
@@ -34,10 +37,26 @@
   margin-right: 115px;
 }
 .time h3 {
-  font-size: 24px;
+  font-size: 28px;
+  line-height: 38.1px;
+  letter-spacing: 0.5px;
+  font-family: "Zilla Slab", sans-serif;
   margin-bottom: 24px;
+  font-weight: 500;
+}
+.time footer {
+  font-size: 16px;
+  line-height: 13.3px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: rgb(180, 181, 185);
 }
 .context {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+  font-family: "PT Serif", sans-serif;
   width: 370px;
 }
 /*watchnext part*/
@@ -49,6 +68,9 @@
 }
 .watchNextTitle {
   font-size: 24px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-family: "Roboto Condensed", sans-serif;
   margin-bottom: 25px;
 }
 .card {
@@ -63,8 +85,10 @@
 }
 .video:hover:not(.playingNow)::after {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 22px;
+  letter-spacing: 0.1px;
+  font-family: "Roboto", sans-serif;
   width: 60px;
   height: 22px;
   text-align: center;
@@ -81,9 +105,15 @@
 
 .playingNow {
   position: relative;
+
   border: 2px solid white;
 }
 .playingNow::after {
+  font-size: 18px;
+  line-height: 23.9px;
+  letter-spacing: 0.1px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
   width: 100%;
   text-align: center;
   position: absolute;
@@ -91,9 +121,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  content: "now playing";
+  content: "NOW PLAYING";
 }
 .watchNextTitleAndTime {
   width: 178px;
   height: 80px;
+}
+.watchNextTitleAndTime h4 {
+  font-size: 18px;
+  line-height: 23.9px;
+  letter-spacing: 0;
+  font-family: "Zilla Slab", sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.watchNextTitleAndTime footer {
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.1px;
+  font-family: "Roboto", sans-serif;
+  color: rgb(180, 181, 185);
 }

@@ -4,9 +4,12 @@
   margin-top: 90px;
 }
 .audio h2 {
-  font-size: 30px;
-  line-height: 26px;
+  font-size: 36px;
+  line-height: 30px;
+  letter-spacing: 0.9px;
+  font-family: "Oswald", sans-serif;
   text-align: center;
+  font-weight: 400;
 }
 .audioBackground {
   position: relative;
