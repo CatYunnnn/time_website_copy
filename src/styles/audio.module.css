@@ -2,6 +2,7 @@
   width: 100%;
   height: 260px;
   margin-top: 90px;
+  overflow: hidden;
 }
 .audio h2 {
   font-size: 36px;
@@ -28,4 +29,20 @@
   transform: translateY(-50%);
   width: 400px;
   height: 60px;
+}
+/*when screen width < 1162*/
+@media (max-width: 1161px) {
+  .audio h2 {
+    font-size: 32px;
+    line-height: 26.7px;
+    letter-spacing: 0.8px;
+  }
+  .audioBackground {
+    width: calc(100% - 34px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .audioBackground audio {
+    width: calc(100% - 200px);
+  }
 }

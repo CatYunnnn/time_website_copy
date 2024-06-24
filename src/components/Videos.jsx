@@ -31,21 +31,21 @@ export default function Videos() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
+          <div className={styles.introduction}>
+            <div className={styles.time}>
+              <h3>2024 U.S. Total Eclipse Explained</h3>
+              <footer>Feb 27,2024 | 2:13</footer>
+            </div>
+            {/*context */}
+            <div className={styles.context}>
+              A rare total solar eclipse will occur across Mexico, the U.S., and
+              Canada on April 8, 2024, when the moon will pass between the Earth
+              and the Sun, blocking the sun's rays during the day time, causing
+              a temporary period of darkness. TIME...
+            </div>
+          </div>
         </div>
         {/*title and time */}
-        <div className={styles.introduction}>
-          <div className={styles.time}>
-            <h3>2024 U.S. Total Eclipse Explained</h3>
-            <footer>Feb 27,2024 | 2:13</footer>
-          </div>
-          {/*context */}
-          <div className={styles.context}>
-            A rare total solar eclipse will occur across Mexico, the U.S., and
-            Canada on April 8, 2024, when the moon will pass between the Earth
-            and the Sun, blocking the sun's rays during the day time, causing a
-            temporary period of darkness. TIME...
-          </div>
-        </div>
       </main>
       {/*watch next part */}
       <div className={styles.watchNext}>

@@ -80,14 +80,17 @@ export default function FeaturedVoices() {
         </div>
       </main>
       {/*bottom side*/}
-      <div
-        className={styles.subscribe}
-        style={{
-          backgroundImage: `url(${pic})`,
-          backgroundPosition: "650px",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
+      <div className={styles.subscribe}>
+        <img
+          className={styles.magazinePhoto}
+          src={pic}
+          style={{
+            backgroundPosition: "650px",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center,center",
+          }}
+          alt="megazine photo"
+        />
         <h3>
           Subscirbe now to get unlimited access to <span>TIME.com</span> and
           more!

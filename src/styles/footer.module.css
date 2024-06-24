@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   margin-top: 90px;
+  overflow: hidden;
 }
 .footer h2 {
   color: rgb(233, 6, 6);
@@ -22,8 +23,11 @@
   cursor: none;
 }
 .columnsWrap {
+  align-items: center;
   display: flex;
   height: 100%;
+  width: calc(100% - 30px);
+  margin: 0 auto 0 auto;
 }
 .columnsWrap > :first-child,
 .wrap > :first-child {
@@ -57,11 +61,11 @@
   background-color: rgb(215, 215, 217);
 }
 .columns {
-  width: 270px;
-  height: 100%;
+  width: 256px;
+  height: 302px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 .columns p {
   color: rgb(104, 108, 115);
@@ -69,7 +73,6 @@
   line-height: 12px;
   letter-spacing: 0.5px;
   font-family: Arial, sans-serif;
-  margin-bottom: 20px;
   cursor: pointer;
 }
 /*footer*/
@@ -97,4 +100,33 @@
   width: 686px;
   font-family: "PT Serif", sans-serif;
   margin: 0 auto auto auto;
+}
+/*when innerWith < 1024*/
+@media (max-width: 1023px) {
+  .nav {
+    height: 676px;
+  }
+  .columnsWrap {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .columnsWrap > :first-child {
+    margin-left: 0;
+  }
+  .columnsWrap > :last-child {
+    margin-right: 0;
+  }
+  .columns {
+    flex-shrink: 0;
+  }
+  .footer footer {
+    text-align: center;
+    height: 92px;
+  }
+  .terms {
+    width: 95%;
+  }
+  .notice {
+    width: 90%;
+  }
 }

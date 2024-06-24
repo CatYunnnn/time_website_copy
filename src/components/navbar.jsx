@@ -9,7 +9,11 @@ const Navbar = () => {
   const [sidebarState, setSidebarState] = useState(false);
   const [inputState, setInputState] = useState(false);
   const openSidebar = () => {
-    setSidebarState(!sidebarState);
+    setSidebarState((preSidebarState) => {
+      /*改變input狀態*/
+      preSidebarState ? setInputState(false) : setInputState(true);
+      return !preSidebarState;
+    });
   };
   const changeInput = () => {
     setInputState(!inputState);
@@ -24,8 +28,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (sidebarState === false) {
-      /*關閉input*/
-      setInputState(false);
       /*讓sidebar跳出時紀錄滾動位址*/
       /*讓畫面恢復 取消固定*/
       document.body.style.position = "static";
@@ -52,8 +54,6 @@ const Navbar = () => {
         window.removeEventListener("wheel", ifTitleShow);
       };
     } else {
-      /*開啟input*/
-      setInputState(true);
       /*讓sidebar跳出時紀錄滾動位址*/
       /*在sidebar彈出時固定畫面 並保留scroll bar*/
       let temp = window.scrollY;

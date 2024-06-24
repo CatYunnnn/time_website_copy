@@ -4,32 +4,44 @@
   height: 800px;
   background-image: linear-gradient(to right, rgb(19, 19, 19), rgb(20, 15, 36));
   padding-bottom: 70px;
+  overflow: hidden;
   color: rgb(235, 235, 235);
+  justify-content: center;
 }
 .main {
-  height: auto;
-  width: 782px;
-  margin-left: auto;
+  position: relative;
+  height: 0;
+  width: calc(100% - 554px);
+  padding-top: calc((100% - 554px) * 0.56);
+  max-width: 782px;
+  margin-left: 50px;
 }
 .button {
+  top: 70px;
+  position: absolute;
   display: block;
   color: white;
   font-size: 36px;
   line-height: 30px;
   letter-spacing: 0.9px;
   font-family: "Oswald", sans-serif;
-  margin-top: 70px;
-  margin-bottom: 34px;
   background-color: transparent;
   outline: none;
   border: none;
 }
 .sampleVideo {
-  width: 782px;
-  height: 440px;
+  position: absolute;
+  top: 135px;
+  width: 100%;
+  height: 100%;
   margin-bottom: 40px;
 }
+.sampleVideo iframe {
+  width: 100%;
+  height: 100%;
+}
 .introduction {
+  margin-top: 36px;
   display: flex;
 }
 .time {
@@ -61,10 +73,8 @@
 }
 /*watchnext part*/
 .watchNext {
-  margin-left: 44px;
-  margin-right: auto;
   width: 410px;
-  padding-top: 140px;
+  margin: 140px 50px 0 44px;
 }
 .watchNextTitle {
   font-size: 24px;
@@ -105,7 +115,6 @@
 
 .playingNow {
   position: relative;
-
   border: 2px solid white;
 }
 .playingNow::after {
@@ -141,4 +150,87 @@
   letter-spacing: 0.1px;
   font-family: "Roboto", sans-serif;
   color: rgb(180, 181, 185);
+}
+/*when screen width < 1162*/
+@media (max-width: 1161px) {
+  .wrap {
+    overflow: hidden;
+    display: block;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .main {
+    position: relative;
+    max-width: 100%;
+    width: calc(100% - 100px);
+    height: 0;
+    padding-top: calc((100% - 100px) * 0.58);
+    margin: 40px auto 0 auto;
+  }
+  .button {
+    position: absolute;
+    top: 0;
+    font-size: 32px;
+    line-height: 26.7px;
+    letter-spacing: 0.8px;
+  }
+  .sampleVideo {
+    top: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .sampleVideo iframe {
+    width: 100%;
+    height: 100%;
+  }
+  .introduction {
+    display: block;
+  }
+  .time {
+    width: 100%;
+    margin: 0 auto 25px auto;
+  }
+  .context {
+    width: 100%;
+    margin: 0 auto 0 auto;
+  }
+  /*watch next part*/
+  .watchNext {
+    position: relative;
+    margin: 300px auto 0 auto;
+    width: 90%;
+    height: 0;
+    padding-top: 30%;
+  }
+  .watchNextTitle {
+    position: absolute;
+    top: 0;
+  }
+  .cards {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 45px);
+    top: 45px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: 23%;
+    height: 45%;
+    display: block;
+  }
+  .video {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  .watchNextTitleAndTime h4 {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    line-height: 20px;
+  }
 }

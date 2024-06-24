@@ -7,6 +7,9 @@
   z-index: 1;
   margin-top: 152px;
   margin-bottom: 100px;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 /*最大的圖片和文字*/
 .bigPhotos {
@@ -15,7 +18,7 @@
   display: flex;
 }
 .wrap {
-  background-color: black;
+  background-color: rgb(25, 25, 25);
   color: white;
   width: 315px;
   height: 400px;
@@ -167,8 +170,75 @@
   font-weight: 600;
   color: rgb(233, 6, 6);
 }
-@media screen and (max-width: 1024px) {
+
+/*rwd design when screen width between 1024 ~ 1162*/
+@media (max-width: 1161px) {
   .main {
-    padding-top: 55px;
+    display: block;
+  }
+  .bigPhotos {
+    width: 100%;
+    height: auto;
+  }
+  .bigPhoto {
+    width: 100%;
+    height: auto;
+  }
+  .wrap {
+    padding: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -226px;
+    width: 100%;
+    height: 226px;
+  }
+  .bigPhotoTitle {
+    font-size: 27px;
+    line-height: 32.6px;
+    letter-spacing: -0.1px;
+    margin: 0;
+  }
+  .timeToRead {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    margin: 0;
+  }
+  .bigPhotoContentTime {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .bigPhotoContent {
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: -0.1px;
+    margin: 0;
+  }
+  .smallPhotos {
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 243px;
+  }
+  .smallPhotoGroup {
+    flex: 1;
+  }
+  .smallPhotoGroup img {
+    width: 100%;
+  }
+  .textArea {
+    width: 508px;
+  }
+  .textArea p {
+    width: 400px;
+  }
+  .article h4 {
+    margin-left: 27px;
+    margin-right: 15px;
   }
 }

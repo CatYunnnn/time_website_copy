@@ -1,12 +1,17 @@
 .others {
-  width: 1230px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1260px;
   height: auto;
   margin-right: auto;
   margin-left: auto;
 }
 .title {
-  position: relative;
   margin-top: 80px;
+  width: 100%;
+  position: relative;
   padding-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +19,8 @@
 .title::before {
   content: "";
   position: absolute;
-  width: 1230px;
+  width: 100%;
+  max-width: 1260px;
   height: 1px;
   top: 0;
   background-color: black;
@@ -59,6 +65,7 @@
   width: 285px;
   height: 190px;
   margin-bottom: 30px;
+  object-position: center center;
 }
 .card h4 {
   width: 285px;
@@ -71,4 +78,76 @@
 .card h4:hover {
   cursor: pointer;
   color: rgb(233, 6, 6);
+}
+/*when screen width < 1162*/
+@media (max-width: 1161px) {
+  .title h3 {
+    font-size: 32px;
+    line-height: 26.7px;
+    letter-spacing: 0.8px;
+  }
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .card {
+    width: 338px;
+    height: 330px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .card img {
+    width: 100%;
+    height: 223px;
+    object-position: center center;
+  }
+  .card h4 {
+    width: 90%;
+  }
+  .blurLeft {
+    position: absolute;
+    width: 70px;
+    height: 223px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .blurRight {
+    position: absolute;
+    width: 70px;
+    height: 223px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(90deg, transparent, black);
+  }
+  .buttonLeft {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonRight {
+    position: absolute;
+    top: 50%;
+    right: 70%;
+    transform: translate(50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonLeft img,
+  .buttonRight img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+  }
 }

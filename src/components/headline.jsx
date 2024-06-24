@@ -78,10 +78,8 @@ const Headline = () => {
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
-              The Golden Globes <br />
-              Monologue Was Bad__But <br />
-              One Joke in Particular Sank <br />
-              Jo Koy
+              The Golden Globes Monologue Was Bad__But One Joke in Particular
+              Sank
             </p>
             <p className={styles.timeToRead}>3 MIN READ</p>
           </div>
@@ -91,10 +89,8 @@ const Headline = () => {
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
-              The Golden Globes <br />
-              Monologue Was Bad__But <br />
-              One Joke in Particular Sank <br />
-              Jo Koy
+              The Golden Globes Monologue Was Bad__But One Joke in Particular
+              Sank Jo Koy
             </p>
             <p className={styles.timeToRead}>7 MIN READ</p>
           </div>
@@ -104,8 +100,7 @@ const Headline = () => {
           <div>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
-              Everything You Need to <br /> Know About the 2024 <br /> Golden
-              Globes
+              Everything You Need to Know About the 2024 Golden Globes
             </p>
             <p className={styles.timeToRead}>6 MIN READ</p>
           </div>
@@ -115,10 +110,8 @@ const Headline = () => {
           <div>
             <p className={styles.type}>POLITICS</p>
             <p className={styles.articleContent}>
-              The Golden Globes <br />
-              Monologue Was Bad__But <br />
-              One Joke in Particular Sank <br />
-              Jo Koy
+              The Golden Globes Monologue Was Bad__But One Joke in Particular
+              Sank Jo Koy
             </p>
             <p className={styles.timeToRead}>4 MIN READ</p>
           </div>

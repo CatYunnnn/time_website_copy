@@ -1,11 +1,12 @@
 .main {
   width: 100%;
-  height: 576px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-bottom: 78px;
+  overflow: hidden;
 }
 .h2 {
   text-align: center;
@@ -17,19 +18,41 @@
 }
 .cardGroups {
   display: flex;
+  max-width: 1432px;
+  width: 100%;
+}
+.leftButton {
+  display: none;
+}
+.rightButton {
+  display: none;
+}
+.aspectRatio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 28%;
+}
+.cardWrap {
+  top: 48px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
 }
 .card {
-  margin-top: 48px;
-  margin-right: 8px;
-  padding-top: 270px;
-  padding-left: 15px;
-  padding-right: 95px;
-  height: 420px;
-  width: 280px;
-  /* background-image: url("../icon/youshoudknow1.webp");
-  background-size: cover; */
+  position: relative;
+  margin-right: 0.6%;
+  width: 23%;
+  height: 100%;
+}
+.firstCard {
+  margin-left: 0.6%;
 }
 .h3 {
+  position: absolute;
+  left: 5%;
+  bottom: calc(5% + 100px);
   font-size: 12px;
   line-height: 10px;
   letter-spacing: 0.8px;
@@ -44,19 +67,109 @@
   background-color: rgb(185, 35, 24);
 }
 .content {
+  position: absolute;
+  left: 5%;
+  bottom: calc(5% + 25px);
+  width: 185px;
+  height: 60px;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.3px;
   font-family: "Zilla Slab", sans-serif;
   color: white;
   font-weight: 600;
-  margin-top: 12px;
-  margin-bottom: 18px;
 }
 .footer {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  /* margin: 0 20% 0 5%; */
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.1px;
   font-family: "Roboto", sans-serif;
   color: white;
+}
+/*when screen width < 1162*/
+@media (max-width: 1161px) {
+  .main {
+    overflow: hidden;
+  }
+  .h2 {
+    font-size: 32px;
+    line-height: 26.7px;
+    letter-spacing: 0.8px;
+  }
+  .cardGroups {
+    position: relative;
+    top: 48px;
+    width: 100%;
+    height: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .blur {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .blurRight {
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(90deg, transparent, black);
+  }
+  .cardGroups button {
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    border: none;
+  }
+  .leftButton {
+    left: 8px;
+    display: none;
+    align-items: center;
+  }
+  .rightButton {
+    right: 8px;
+    display: block;
+    align-items: center;
+  }
+  .rightButton img,
+  .leftButton img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+  }
+  .aspectRatio {
+    width: 100%;
+    height: 420px;
+    padding: 0;
+  }
+  .cardWrap {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .card {
+    flex-shrink: 0;
+    width: 280px;
+    height: 420px;
+  }
+  .h3 {
+    margin-top: 100%;
+  }
 }

@@ -110,10 +110,16 @@
     top: 0px;
   }
 }
-.sidebarHead p,
-.sidebarHeadMove p {
+.sidebarHead p:first-child,
+.sidebarHead p:last-child,
+.sidebarHeadMove p:first-child,
+.sidebarHeadMove p:last-child {
   flex: 1;
   text-align: center;
+}
+.sidebarHeadP,
+.sidebarHeadPHide {
+  flex: 2;
 }
 .sidebarHead p:first-child,
 .sidebarHeadMove p:first-child {
@@ -213,6 +219,7 @@
   font-weight: 300;
   opacity: 1;
   transition: opacity 0.2s ease-out;
+  align-items: center;
 }
 .sidebarHeadPHide {
   opacity: 0;
@@ -221,6 +228,7 @@
 .sidebarHeadP img,
 .sidebarHeadPHide img {
   width: 18px;
+  height: 18px;
   margin-right: 6px;
 }
 .sidebar,
