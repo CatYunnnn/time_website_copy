@@ -15,8 +15,8 @@
 ## 畫面預覽
 
 ![首頁](picture/首頁.png)
-![中等畫面](picture/768px-1161px.png)
-![行動裝置](picture/768px.png)
+![中等畫面](picture/中等畫面.png)
+![行動裝置](picture/行動裝置.png)
 
 ## 資料夾說明
 
