@@ -52,11 +52,17 @@
   height: 22px;
   margin-right: 6px;
 }
+.stories {
+  display: none;
+}
 .wrap {
   justify-content: space-between;
   overflow: hidden;
   display: flex;
   flex-wrap: nowrap;
+}
+.offset {
+  display: contents;
 }
 .card {
   margin-right: 8px;
@@ -79,8 +85,8 @@
   cursor: pointer;
   color: rgb(233, 6, 6);
 }
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*when screen width < 1162 and >  767px*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .title h3 {
     font-size: 32px;
     line-height: 26.7px;
@@ -114,6 +120,126 @@
     z-index: 1;
   }
   .blurRight {
+    position: absolute;
+    width: 70px;
+    height: 223px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(90deg, transparent, black);
+  }
+  .buttonLeft {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonRight {
+    position: absolute;
+    top: 50%;
+    right: 70%;
+    transform: translate(50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonLeft img,
+  .buttonRight img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .title {
+    flex-direction: column;
+    align-items: start;
+  }
+  .title h3 {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+  }
+  .title p {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.7px;
+  }
+  .stories {
+    text-align: center;
+    display: block;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-family: "Zilla Slab", sans-serif;
+  }
+  .storiesButton {
+    margin-top: 18px;
+    margin-bottom: 22px;
+    height: 12px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(151, 151, 151);
+    margin-left: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+  .black {
+    background-color: rgb(13, 13, 13);
+  }
+  .wrap {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .offset {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+  .card {
+    max-width: 613px;
+    width: 80%;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .card img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-position: center center;
+  }
+  .card h4 {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .blurLeft {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 223px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .blurRight {
+    display: none;
     position: absolute;
     width: 70px;
     height: 223px;

@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import styles from "../styles/featuredVoices.module.css";
 import pic from "../icon/featuredVoices1.webp";
 export default function FeaturedVoices() {
+  const [offset, setOffset] = useState(0);
+  const offsetEnd = useRef(0);
+  const currentX = useRef(0);
+  const isDragging = useRef(false);
+  const touchStartX = useRef(0);
+  const transform = { transform: `translateX(${offset}px)` };
+  const handleTouchStart = function (e) {
+    const width = window.innerWidth;
+    if (width >= 768) return;
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    isDragging.current = true;
+  };
+  const handleTouchMove = function (e) {
+    if (!isDragging.current) return;
+    const width = window.innerWidth;
+    const touch = e.touches[0];
+    currentX.current = touch.clientX;
+    if (offsetEnd.current + (currentX.current - touchStartX.current) >= 0) {
+      offsetEnd.current = 0;
+      setOffset(0);
+    } else if (
+      offsetEnd.current + (currentX.current - touchStartX.current) <=
+      -(800 - width + 30)
+      /////////60為左右寬度 這裡算的是最大向左滑動距離
+    ) {
+      offsetEnd.current = -(800 - width + 30);
+      setOffset(-(800 - width + 30));
+    } else {
+      setOffset(offsetEnd.current + (currentX.current - touchStartX.current));
+    }
+  };
+  const handleTouchEnd = function () {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    offsetEnd.current += currentX.current - touchStartX.current;
+    console.log(offsetEnd.current);
+  };
   return (
     <div>
       <main className={styles.wrap}>
@@ -9,22 +47,46 @@ export default function FeaturedVoices() {
         <div className={styles.mainTopics}>
           <h2>FEATURED VOICES</h2>
           <div className={styles.cards}>
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+              onTouchEnd={() => handleTouchEnd()}
+              style={transform}
+            >
               <h3>Steve Tsang</h3>
               <p>What Xi Jinping Really Thinks</p>
             </div>
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+              onTouchEnd={() => handleTouchEnd()}
+              style={transform}
+            >
               <h3>Hoda Sherif</h3>
               <p>
                 Covering Columbia's Student Protests Gave Me Hope About
                 Journalism's Future
               </p>
             </div>
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+              onTouchEnd={() => handleTouchEnd()}
+              style={transform}
+            >
               <h3>Tiffany Nicole and Abigail Glasgow</h3>
               <p>How Can I Be Free When My Child Is Incarcerated?</p>
             </div>
-            <div className={styles.card}>
+            <div
+              className={styles.card}
+              onTouchStart={(e) => handleTouchStart(e)}
+              onTouchMove={(e) => handleTouchMove(e)}
+              onTouchEnd={() => handleTouchEnd()}
+              style={transform}
+            >
               <h3>Ian Bremmer</h3>
               <p>How Marine Le Pen Could Become France's Prime Minister</p>
             </div>

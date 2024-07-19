@@ -151,8 +151,8 @@
   font-family: "Roboto", sans-serif;
   color: rgb(180, 181, 185);
 }
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*when screen width < 1162 and >  767px*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .wrap {
     overflow: hidden;
     display: block;
@@ -200,7 +200,7 @@
   /*watch next part*/
   .watchNext {
     position: relative;
-    margin: 300px auto 0 auto;
+    margin: 300px auto 20px auto;
     width: 90%;
     height: 0;
     padding-top: 30%;
@@ -232,5 +232,103 @@
     height: auto;
     font-size: 15px;
     line-height: 20px;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .wrap {
+    overflow: hidden;
+    display: block;
+    height: auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .main {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .button {
+    position: relative;
+    top: 0;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    margin: 40px 0 20px 32px;
+  }
+  .sampleVideo {
+    top: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .sampleVideo iframe {
+    max-width: 686px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 0.56;
+  }
+  .introduction {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  .time {
+    width: 100%;
+    margin: 0 auto 25px auto;
+  }
+  .context {
+    width: 100%;
+    margin: 0 auto 0 auto;
+  }
+  /*watch next part*/
+  .watchNext {
+    position: relative;
+    margin: 0 auto 0 auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+  }
+  .watchNextTitle {
+    position: relative;
+  }
+  .cards {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    width: 165px;
+    height: 100%;
+    aspect-ratio: 1 / 0.56;
+    flex-shrink: 0;
+    display: block;
+    margin-right: 30px;
+  }
+  .video {
+    width: 165px;
+    height: 93px;
+    margin-bottom: 20px;
+  }
+  .watchNextTitleAndTime {
+    height: auto;
+  }
+  .watchNextTitleAndTime h4 {
+    width: 165px;
+    height: auto;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .watchNextTitleAndTime footer {
+    width: 165px;
   }
 }

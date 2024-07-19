@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "../styles/videos.module.css";
 import pic1 from "../icon/videosImg1.jpg";
 import pic2 from "../icon/videosImg2.jpg";
@@ -12,8 +12,45 @@ export default function Videos() {
     "https://www.youtube.com/embed/xZlx_FdLKIk?si=Y9vKrQEsxxgZtPRU",
   ];
   const [playingNow, setPlayingNow] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const offsetEnd = useRef(0);
+  const isDragging = useRef(false);
+  const touchStartX = useRef(0);
+  const currentX = useRef(0);
+  const translate = { transform: `translateX(${offset}px)` };
   const addToPlaying = (index) => {
     setPlayingNow(index);
+  };
+  const handleTouchStart = function (e) {
+    const width = window.innerWidth;
+    if (width >= 768) return;
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    isDragging.current = true;
+  };
+  const handleTouchMove = function (e) {
+    if (!isDragging.current) return;
+    const width = window.innerWidth;
+    const touch = e.touches[0];
+    currentX.current = touch.clientX;
+    if (offsetEnd.current + (currentX.current - touchStartX.current) >= 0) {
+      offsetEnd.current = 0;
+      setOffset(0);
+    } else if (
+      offsetEnd.current + (currentX.current - touchStartX.current) <=
+      -(750 - width + 60)
+      /////////60為左右寬度 這裡算的是最大向左滑動距離
+    ) {
+      offsetEnd.current = -(750 - width + 60);
+      setOffset(-(750 - width + 60));
+    } else {
+      setOffset(offsetEnd.current + (currentX.current - touchStartX.current));
+    }
+  };
+  const handleTouchEnd = function (e) {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    offsetEnd.current += currentX.current - touchStartX.current;
   };
   return (
     <div className={styles.wrap}>
@@ -51,7 +88,13 @@ export default function Videos() {
       <div className={styles.watchNext}>
         <h3 className={styles.watchNextTitle}>WATCH NEXT</h3>
         {/*cards */}
-        <div className={styles.cards}>
+        <div
+          className={styles.cards}
+          style={translate}
+          onTouchStart={(e) => handleTouchStart(e)}
+          onTouchMove={(e) => handleTouchMove(e)}
+          onTouchEnd={() => handleTouchEnd()}
+        >
           <div className={styles.card}>
             <div
               className={`${styles.video} ${

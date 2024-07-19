@@ -75,7 +75,7 @@ const Headline = () => {
         <h3 className={styles.articleTitle}>MOST READ</h3>
         <article className={styles.article}>
           <h4>1 </h4>
-          <div>
+          <div className={styles.contentWrap}>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
               The Golden Globes Monologue Was Bad__But One Joke in Particular
@@ -86,7 +86,7 @@ const Headline = () => {
         </article>
         <article className={styles.article}>
           <h4>2 </h4>
-          <div>
+          <div className={styles.contentWrap}>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
               The Golden Globes Monologue Was Bad__But One Joke in Particular
@@ -97,7 +97,7 @@ const Headline = () => {
         </article>
         <article className={styles.article}>
           <h4>3 </h4>
-          <div>
+          <div className={styles.contentWrap}>
             <p className={styles.type}>ENTERTAINMENT</p>
             <p className={styles.articleContent}>
               Everything You Need to Know About the 2024 Golden Globes
@@ -107,7 +107,7 @@ const Headline = () => {
         </article>
         <article className={styles.article}>
           <h4>4 </h4>
-          <div>
+          <div className={styles.contentWrap}>
             <p className={styles.type}>POLITICS</p>
             <p className={styles.articleContent}>
               The Golden Globes Monologue Was Bad__But One Joke in Particular

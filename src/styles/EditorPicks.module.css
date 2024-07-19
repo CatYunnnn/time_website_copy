@@ -14,6 +14,9 @@
   margin-bottom: 30px;
   background-color: black;
 }
+.stories {
+  display: none;
+}
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -63,8 +66,8 @@
   font-family: "Zilla Slab", sans-serif;
 }
 
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*when screen width < 1162 and >  767px*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .editorPicks {
     position: relative;
     width: 100%;
@@ -81,6 +84,9 @@
   .wrap {
     width: 100%;
   }
+  .stories {
+    display: none;
+  }
   .title {
     margin-left: 2px;
     font-size: 32px;
@@ -90,27 +96,9 @@
   .subscribe {
     margin-right: 2px;
   }
-  /*cards*/
-  .cards::before {
-    content: "";
-    width: 18px;
-    height: 100%;
-    position: absolute;
-    background-color: white;
-    left: -18px;
-    z-index: 2;
-  }
-  .cards::after {
-    content: "";
-    width: 18px;
-    height: 100%;
-    position: absolute;
-    background-color: white;
-    right: -18px;
-    z-index: 2;
-  }
   .cards {
     position: relative;
+    overflow: hidden;
   }
   .blurLeft {
     position: absolute;
@@ -162,7 +150,140 @@
     height: 225px;
     margin-right: 8px;
   }
-  .cardWrap:first-child {
-    margin-left: 16px;
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .editorPicks {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 15px 0 80px 0;
+    padding: 30px 0 0 0;
+    overflow: hidden;
+  }
+  .editorPicks::before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .wrap {
+    display: block;
+    width: 100%;
+    margin-left: 8px;
+  }
+  .title {
+    margin-left: 2px;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+  }
+  .subscribe {
+    text-align: left;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.7px;
+    margin: 0;
+    margin-top: 30px;
+    display: block;
+  }
+  .subscribe img {
+    width: 16 px;
+    height: 16px;
+  }
+  /*cards*/
+  .cards {
+    position: relative;
+  }
+  .cards .cardWrap:first-of-type {
+    margin-left: 8px;
+  }
+  .cardWrap {
+    width: 80%;
+    max-width: 613.59px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .card {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .blurLeft {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 225px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .blurRight {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 225px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(90deg, transparent, black);
+  }
+  .buttonLeft {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonRight {
+    position: absolute;
+    top: 50%;
+    right: 70%;
+    transform: translate(50%, -50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+  }
+  .buttonLeft img,
+  .buttonRight img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+  }
+  .stories {
+    text-align: center;
+    display: block;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-family: "Zilla Slab", sans-serif;
+  }
+  .storiesButton {
+    margin-top: 18px;
+    margin-bottom: 22px;
+    height: 12px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(151, 151, 151);
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .black {
+    background-color: rgb(13, 13, 13);
   }
 }

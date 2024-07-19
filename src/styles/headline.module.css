@@ -170,11 +170,11 @@
   font-weight: 600;
   color: rgb(233, 6, 6);
 }
-
-/*rwd design when screen width between 1024 ~ 1162*/
-@media (max-width: 1161px) {
+/*rwd design when screen width between 768 ~ 1161*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .main {
     display: block;
+    padding: 0;
   }
   .bigPhotos {
     width: 100%;
@@ -240,5 +240,108 @@
   .article h4 {
     margin-left: 27px;
     margin-right: 15px;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .main {
+    display: block;
+    padding: 0;
+    margin-bottom: 70px;
+  }
+  .bigPhotos {
+    width: 100%;
+    height: auto;
+  }
+  .bigPhoto {
+    width: 100%;
+    height: auto;
+  }
+  .wrap {
+    padding: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: -226px;
+    width: 100%;
+    height: auto;
+  }
+  .bigPhotoTitle {
+    font-size: 27px;
+    line-height: 32.6px;
+    letter-spacing: -0.1px;
+    margin: 0;
+  }
+  .timeToRead {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+    margin: 0;
+  }
+  .bigPhotoContentTime {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .bigPhotoContent {
+    height: auto;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: -0.1px;
+    margin: 0;
+  }
+  .smallPhotos {
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 243px;
+  }
+  .smallPhotoGroup {
+    flex: 1;
+  }
+  .smallPhotoGroup img {
+    width: 100%;
+  }
+  .article h4 {
+    margin-left: 27px;
+    margin-right: 15px;
+  }
+  .smallPhotos {
+    display: block;
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .smallPhotoGroup {
+    width: 100%;
+  }
+  .smallPhoto {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+  }
+  .smallPhotoContent {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .time {
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+  .textArea {
+    margin-top: 50px;
+    width: 100%;
+  }
+  .contentWrap {
+    width: 100%;
+  }
+  .articleContent {
+    width: 100%;
   }
 }

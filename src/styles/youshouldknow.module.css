@@ -16,6 +16,9 @@
   font-family: "Oswald", sans-serif;
   font-weight: 400;
 }
+.stories {
+  display: none;
+}
 .cardGroups {
   display: flex;
   max-width: 1432px;
@@ -90,8 +93,8 @@
   font-family: "Roboto", sans-serif;
   color: white;
 }
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*rwd design when screen width between 768 ~ 1161*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .main {
     overflow: hidden;
   }
@@ -135,6 +138,15 @@
     border-radius: 50%;
     border: none;
   }
+  .card {
+    position: relative;
+    margin-right: 8px;
+    width: 23%;
+    height: 100%;
+  }
+  .firstCard {
+    margin-left: 8px;
+  }
   .leftButton {
     left: 8px;
     display: none;
@@ -171,5 +183,88 @@
   }
   .h3 {
     margin-top: 100%;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .main {
+    overflow: hidden;
+    padding-bottom: 38px;
+  }
+  .h2 {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+  }
+  .stories {
+    text-align: center;
+    display: block;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    font-family: "Zilla Slab", sans-serif;
+  }
+  .storiesButton {
+    margin-top: 18px;
+    margin-bottom: 22px;
+    height: 12px;
+    width: auto;
+    display: flex;
+  }
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(151, 151, 151);
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .black {
+    background-color: rgb(13, 13, 13);
+  }
+  .cardGroups {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .blur {
+    display: none;
+  }
+  .blurRight {
+    display: none;
+  }
+  .cardGroups button {
+    display: none;
+  }
+  .aspectRatio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0;
+    padding-top: 123%;
+  }
+  .cardWrap {
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .card {
+    flex-shrink: 0;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 2 / 3;
+    margin-right: 8px;
+  }
+  .firstCard {
+    margin-left: 8px;
+  }
+  .h3 {
+    margin-top: 100%;
+    transform: translate(calc(100%));
   }
 }

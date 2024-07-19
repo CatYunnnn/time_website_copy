@@ -30,8 +30,8 @@
   width: 400px;
   height: 60px;
 }
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*when screen width < 1162 and >  767px*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .audio h2 {
     font-size: 32px;
     line-height: 26.7px;
@@ -39,6 +39,23 @@
   }
   .audioBackground {
     width: calc(100% - 34px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .audioBackground audio {
+    width: calc(100% - 200px);
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .audio h2 {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+  }
+  .audioBackground {
+    width: 100%;
+    height: 180px;
     margin-left: auto;
     margin-right: auto;
   }

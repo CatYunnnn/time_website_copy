@@ -101,8 +101,8 @@
   font-family: "PT Serif", sans-serif;
   margin: 0 auto auto auto;
 }
-/*when innerWith < 1024*/
-@media (max-width: 1023px) {
+/*rwd design when screen width between 768 ~ 1161*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .nav {
     height: 676px;
   }
@@ -122,6 +122,40 @@
   .footer footer {
     text-align: center;
     height: 92px;
+  }
+  .terms {
+    width: 95%;
+  }
+  .notice {
+    width: 90%;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .nav {
+    height: auto;
+  }
+  .columnsWrap {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .columnsWrap > :first-child {
+    margin-left: 0;
+  }
+  .columnsWrap > :last-child {
+    margin-right: 0;
+  }
+  .columns {
+    width: 50%;
+    flex-shrink: 0;
+    align-items: start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .footer footer {
+    text-align: center;
+    height: 92px;
+    margin-bottom: 150px;
   }
   .terms {
     width: 95%;

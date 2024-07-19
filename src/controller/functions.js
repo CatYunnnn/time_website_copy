@@ -182,3 +182,75 @@ export function useEffectCallBack(
     };
   }, []);
 }
+/*handle mobile touch*/
+export function handleTouchStart(e, mouseStartX, isDragging) {
+  const width = window.innerWidth;
+  if (width >= 768) return;
+  const touch = e.touches[0];
+  mouseStartX.current = touch.clientX;
+  isDragging.current = true;
+}
+export function handleTouchMove(
+  e,
+  isDragging,
+  currentX,
+  mouseStartX,
+  setDraggingOffset
+) {
+  const touch = e.touches[0];
+  const width = window.innerWidth;
+  if (width >= 768 || !isDragging.current) return;
+  currentX.current = touch.clientX;
+  setDraggingOffset(currentX.current - mouseStartX.current);
+}
+export function handleTouchEnd(
+  isDragging,
+  currentX,
+  setCircleBackground,
+  setDraggingOffset,
+  mouseStartX,
+  circleBackground
+) {
+  const width = window.innerWidth;
+  if (width >= 768 || !isDragging.current) return;
+  setDraggingOffset(0);
+  if (
+    currentX.current - mouseStartX.current >= width / 3 &&
+    circleBackground > 0
+  ) {
+    setCircleBackground((prevCircleBackground) => prevCircleBackground - 1);
+  } else if (
+    currentX.current - mouseStartX.current <= -width / 3 &&
+    circleBackground < 4
+  ) {
+    setCircleBackground((prevCircleBackground) => prevCircleBackground + 1);
+  }
+  isDragging.current = false;
+}
+/*change the page button circle*/
+export function changeCard(index, setCircleBackground) {
+  setCircleBackground(index);
+}
+/*if in mobile*/
+export function useIfInMobile(ifMobile, setIfMobile, useEffect) {
+  (() => {
+    const width = window.innerWidth;
+    if (width < 768 && ifMobile === false) {
+      setIfMobile(true);
+    }
+  })();
+  const changeToMobile = () => {
+    const width = window.innerWidth;
+    if (width < 768) {
+      setIfMobile(true);
+    } else if (width > 768) {
+      setIfMobile(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", changeToMobile);
+    return () => {
+      window.removeEventListener("resize", changeToMobile);
+    };
+  }, []);
+}

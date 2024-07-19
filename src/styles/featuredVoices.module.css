@@ -46,8 +46,8 @@
   font-size: 28px;
   line-height: 28px;
   letter-spacing: 1.4px;
-  font-family: "Zilla Slab", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
   color: rgb(233, 6, 6);
   margin-bottom: 15px;
   cursor: pointer;
@@ -57,7 +57,8 @@
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 1.2px;
-  font-family: "Roboto", sans-serif;
+
+  font-family: "Zilla Slab", sans-serif;
   cursor: pointer;
 }
 .card p:hover {
@@ -177,8 +178,8 @@
   font-weight: 300;
   cursor: pointer;
 }
-/*when screen width < 1162*/
-@media (max-width: 1161px) {
+/*when screen width < 1162 and >  767px*/
+@media (min-width: 768px) and (max-width: 1161px) {
   .wrap {
     width: 100%;
     height: auto;
@@ -223,5 +224,118 @@
   .subscribe {
     max-width: 100%;
     z-index: 1;
+  }
+}
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .wrap {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+  .mainTopics {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  .mainTopics::before {
+    margin-right: 48px;
+    width: 100%;
+  }
+  .mainTopics h2 {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    margin-left: 15px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: nowrap;
+    width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+  .card {
+    position: relative;
+    width: 200px;
+    height: 141px;
+    margin-bottom: 50px;
+    margin-right: 0;
+    padding-right: 30px;
+    flex-shrink: 0;
+  }
+
+  .card::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: #dddddd;
+    top: 0;
+    left: -18px;
+  }
+  .card:first-child::before {
+    width: 0;
+    height: 0;
+  }
+  .card h3 {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0px;
+  }
+  .card p {
+    font-size: 18px;
+    line-height: 23.9px;
+    letter-spacing: 0px;
+  }
+  .latestStories {
+    width: 100%;
+  }
+  .latestStoriesTopic {
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .subscribe {
+    max-width: 100%;
+    z-index: 1;
+    padding-left: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    height: auto;
+  }
+  .storyTopic {
+    font-size: 18px;
+    line-height: 23.9px;
+    letter-spacing: 0;
+  }
+  .magazinePhoto {
+    right: 15%;
+    width: 40%;
+  }
+  .subscribe h3 {
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 0;
+    width: 65%;
+  }
+  .subscribe p {
+    width: 50%;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+  .subscribe button {
+    width: 210px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    font-weight: 600;
   }
 }

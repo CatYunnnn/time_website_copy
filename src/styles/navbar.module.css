@@ -328,3 +328,27 @@
 .wrap {
   display: flex;
 }
+/*rwd design when screen width less than 768px*/
+@media (max-width: 767px) {
+  .title {
+    position: relative;
+  }
+  .title h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .title p {
+    display: none;
+  }
+  .title div button {
+    position: absolute;
+    right: 2%;
+    width: 108px;
+    height: 44px;
+  }
+  .sidebarHeadP {
+    display: none;
+  }
+}
